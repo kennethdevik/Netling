@@ -38,6 +38,7 @@ namespace Netling.Core
                 sw.Start();
                 var webRequest = (HttpWebRequest)WebRequest.Create(url);
                 webRequest.Headers[HttpRequestHeader.AcceptEncoding] = "gzip,deflate,sdch";
+                webRequest.CookieContainer = SimpleBrowser.Instance.Cookies;
 
                 using (var response = (HttpWebResponse)await webRequest.GetResponseAsync())
                 {

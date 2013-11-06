@@ -32,6 +32,7 @@ namespace Netling.Client
                 var threads = Convert.ToInt32(Threads.SelectionBoxItem);
                 var durationText = (string)((ComboBoxItem)Duration.SelectedItem).Content;
                 StatusProgressbar.IsIndeterminate = false;
+                SimpleBrowser.LoginEpiserverWebForms(LoginUrl.Text, Username.Text, Password.Text);
 
                 switch (durationText)
                 {
